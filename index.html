@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="cover.css">
-    <link href="cover.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -21,20 +21,45 @@
     <script src="try.js"></script>
   </head>
 
-<body class="h-100 text-center">
+<body class="h-100">
 
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<div id="home" class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-100">
-    <div>
-      <h3 class="float-md-start mb-0 mt-0 text-white">PORTFOLIO</h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link py-1 px-0 text-white" aria-current="page" href="#">Home</a>
-        <a class="nav-link py-1 px-0 text-white" href="#">About</a>
-        <a class="nav-link py-1 px-0 text-white" href="#pf">Portfolio</a>
-        <a class="nav-link py-1 px-0 text-white" href="#">Contact</a>
-      </nav>
+    <div class="container-div">
+      <h3 class="position-fixed mb-0 mt-0 text-white fw-bold">PORT<span class="text-warning">FOLIO</span> </h3>
+      <div class="menu-container">
+        <div id="menu-icon" class="menu-icon">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <nav class="nav fw-bold position-fixed">
+          <div class="nav-a">
+          <a class="nav-link py-1 px-0 text-white" aria-current="page" href="#home">Home</a>
+          </div>
+          <div class="nav-a">
+          <a class="nav-link py-1 px-0 text-white" href="#about">About</a>
+          </div>
+          <div class="nav-a">
+          <a class="nav-link py-1 px-0 text-white" href="#pf">Portfolio</a>
+          </div>
+          <div class="nav-a">
+          <a class="nav-link py-1 px-0 text-white" href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
     </div>
   </header>
+  <div class="sidebar">
+    <div class="close-icon" id="close-sidebar">✕</div><br><br>
+    <nav>
+      <a class="nav-link py-1 px-0 text-white" aria-current="page" href="#">Home</a>
+      <a class="nav-link py-1 px-0 text-white" href="#">About</a>
+      <a class="nav-link py-1 px-0 text-white" href="#pf">Portfolio</a>
+      <a class="nav-link py-1 px-0 text-white" href="#">Contact</a>
+    </nav>
+  </div>
+  <div class="sidebar-overlay"></div>
 
   <main class="px-3 h-100 w-50 text-left">
     <div class="main-container">
@@ -42,7 +67,7 @@
       <p class="lead text-warning fw-bold">Freelance Front-End Developer</p>
       <p class="lead text-white">A Front-End focused Web Developer building the Interface of Websites that leads to the success of the overall product.</p>
       <p class="lead">
-        <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Let's Talk</a>
+        <a href="#contact" class="btn btn-lg btn-light fw-bold border-white bg-white">Let's Talk</a>
       </p>
     </div>
   </main>
@@ -68,8 +93,8 @@
   </div>
 </div>
 
-<div>
-  <div class="pf-h1">
+<div id="pf">
+  <div class="pf-h1 text-center">
     <h1 class="section-title">My Portfolio</h1>
   </div>
   <div class="container">
@@ -80,13 +105,13 @@
             <div class="item active">
               <img src="images/project/PortfolioV1.PNG" alt="">
               <div class="carousel-caption">
-                <h3>Amazing Digital Experience</h3>
+                <h3>Great Design</h3>
                 </div>
             </div>	
             <div class="item">
               <img src="images/project/Project1.PNG" alt="">
               <div class="carousel-caption">
-                <h3>Live Monitoring Tools</h3>							
+                <h3>Mobile Friendly</h3>							
                 </div>
             </div>
           </div>
@@ -97,6 +122,119 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<section id="contact" class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-5">
+        <h2 class="heading-section">GET IN TOUCH</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="wrapper">
+          <div class="row no-gutters">
+            <div class="col-md-6 d-flex align-items-stretch">
+              <div class="contact-wrap w-100 p-md-5 p-4 py-5">
+                <h3 class="mb-4">Write us</h3>
+                <div id="form-message-warning" class="mb-4"></div> 
+                <div id="form-message-success" class="mb-4">
+                  Your message was sent, thank you!
+                </div>
+                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                      </div>
+                    </div>
+                    <div class="col-md-12"> 
+                      <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Message"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="submit" value="Send Message" class="btn btn-primary">
+                        <div class="submitting"></div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-stretch">
+              <div class="info-wrap w-100 p-md-5 p-4 py-5 img">
+                <h3>Contact information</h3>
+                <p class="mb-4">We're open for any suggestion or just to have a chat</p>
+                <div class="dbox w-100 d-flex align-items-start">
+                  <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-map-marker"></span>
+                  </div>
+                  <div class="text pl-3 dbox-p">
+                    <p><span>Address:</span> Dasmariñas, Cavite</p>
+                  </div>
+                </div>
+                <div class="dbox w-100 d-flex align-items-center">
+                  <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-phone"></span>
+                  </div>
+                  <div class="text pl-3">
+                    <p><span>Phone:</span> <a href="tel://1234567920">+63945-739-2548</a></p>
+                  </div>
+                </div>
+                <div class="dbox w-100 d-flex align-items-center">
+                  <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-paper-plane"></span>
+                  </div>
+                  <div class="text pl-3">
+                    <p><span>Email:</span> <a href="mailto:info@yoursite.com">renzsayaman100@gmail.com</a></p>
+                  </div>
+                </div>
+                <div class="dbox w-100 d-flex align-items-center">
+                  <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-globe"></span>
+                  </div>
+                  <div class="text pl-3">
+                    <p><span>Website</span> <a href="#">Linkedin.com/in/Renz-Sayaman</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer" class="text-center">
+  <div class="container">
+    <div class="socials-media text-center">
+
+      <ul class="list-unstyled">
+        <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+        <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+        <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+        <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+      </ul>
+
+    </div>
+
+    <p>&copy; Copyrights 2023. All rights reserved.</p>
+
   </div>
 </div>
 
