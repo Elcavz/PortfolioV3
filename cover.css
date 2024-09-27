@@ -204,9 +204,8 @@ body {
 }
 
 @media (min-width: 1440px) {
-  #home {
-    margin: 0 183px!important;
-    width: 100vw!important;
+  .main-container {
+    margin: 0 0 0 185px;
   }
 }
 
