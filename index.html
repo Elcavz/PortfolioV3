@@ -1,268 +1,801 @@
 <!doctype html>
-<html lang="en" class="h-100" data-bs-theme="auto">
+<html lang="en">
 
 <head>
-  <script src="../assets/js/color-modes.js"></script>
-
   <meta charset="utf-8">
+  <script>document.documentElement.classList.add('js')</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Hugo 0.118.2">
-  <title>Portfolio | Renz Sayaman</title>
+  <title>Renz Sayaman — Full Stack Web Developer</title>
+  <meta name="description"
+    content="Renz Bautista Sayaman is a full stack web developer from Dasmariñas, Cavite building fast, responsive websites that help businesses grow.">
+  <meta name="author" content="Renz Bautista Sayaman">
+  <meta name="theme-color" content="#0a0a0f">
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-  <link href="bootstrap.min.css" rel="stylesheet">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Renz Sayaman — Full Stack Web Developer">
+  <meta property="og:description"
+    content="Fast, responsive websites and custom web solutions that attract clients and streamline business operations.">
+  <meta property="og:image" content="images/project/PortfolioV1.PNG">
+
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffb547'/%3E%3Cstop offset='1' stop-color='%23ff5e3a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='800' font-size='28' fill='%230a0a0f'%3ERS%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="cover.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body class="h-100">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <div id="home" class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="mb-100">
-      <div class="container-div">
-        <div class="menu-container d-flex flex-row justify-content-between">
-          <h3 class="mb-0 mt-0 text-white fw-bold">PORT<span class="text-warning">FOLIO</span> </h3>
-          <nav class="nav fw-bold">
-            <div class="nav-a">
-              <a class="nav-link py-1 px-0 text-white" aria-current="page" href="#home">Home</a>
-            </div>
-            <div class="nav-a">
-              <a class="nav-link py-1 px-0 text-white" href="#about">About</a>
-            </div>
-            <div class="nav-a">
-              <a class="nav-link py-1 px-0 text-white" href="#pf">Portfolio</a>
-            </div>
-            <div class="nav-a">
-              <a class="nav-link py-1 px-0 text-white" href="#contact">Contact</a>
-            </div>
-          </nav>
-          <div id="menu-icon" class="menu-icon">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+  <!-- Ambient background -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="bg-noise"></div>
+  </div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav-wrap">
+    <nav class="nav" aria-label="Primary">
+      <a href="#home" class="logo" aria-label="Renz Sayaman, home">
+        <span class="logo-mark">RS</span>
+        <span class="logo-text">Renz<span class="accent">.</span></span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary btn-sm nav-cta magnetic">Hire me <i class="bi bi-arrow-up-right"></i></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false"
+        aria-controls="mobile-menu">
+        <span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul>
+      <li><a href="#about"><span>01</span>About</a></li>
+      <li><a href="#services"><span>02</span>Services</a></li>
+      <li><a href="#skills"><span>03</span>Skills</a></li>
+      <li><a href="#projects"><span>04</span>Projects</a></li>
+      <li><a href="#contact"><span>05</span>Contact</a></li>
+    </ul>
+    <a href="mailto:renzsayaman100@gmail.com" class="mobile-mail">renzsayaman100@gmail.com</a>
+  </div>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="badge reveal">
+            <span class="pulse"></span> Available for freelance &amp; full-time work
           </div>
-        </div>
-      </div>
-    </header>
-    <div class="sidebar">
-      <div class="close-icon" id="close-sidebar">✕</div><br><br>
-      <nav>
-        <a class="nav-link py-1 px-0 text-white" aria-current="page" href="#">Home</a>
-        <a class="nav-link py-1 px-0 text-white" href="#">About</a>
-        <a class="nav-link py-1 px-0 text-white" href="#pf">Portfolio</a>
-        <a class="nav-link py-1 px-0 text-white" href="#">Contact</a>
-      </nav>
-    </div>
-    <div class="sidebar-overlay"></div>
-
-    <main class="px-3 h-100 w-50 text-left">
-      <div class="main-container h-100 d-flex flex-column justify-content-center">
-        <div id="infoWrapper" class="d-flex flex-column gap-3">
-          <h1 id="headLabel" class="text-white fw-bold text-uppercase"></h1>
-          <p class="text-warning fw-bold fs-1">Full Stack Web Developer</p>
-          <p class="text-white fs-3">Full-stack web developer specializing in website development. Dedicated to creating
-            online platforms that attract clients and streamline business operations through custom solutions.</p>
-          <p>
-            <a href="#contact" class="btn btn-lg btn-light fw-bold bg-white">Let's Talk</a>
+          <h1 class="hero-title reveal">
+            Hi, I'm <span class="gradient-text">Renz Sayaman</span>
+          </h1>
+          <p class="hero-role reveal" aria-live="polite">
+            <span class="mono">&gt;</span> <span id="typed"></span><span class="caret"></span>
           </p>
+          <p class="hero-sub reveal">
+            Full stack web developer specializing in website development. I build online platforms that
+            <strong>attract clients</strong> and <strong>streamline business operations</strong> through custom
+            solutions.
+          </p>
+          <div class="hero-actions reveal">
+            <a href="#projects" class="btn btn-primary magnetic">View my work <i class="bi bi-arrow-down-right"></i></a>
+            <a href="#contact" class="btn btn-ghost magnetic">Let's talk</a>
+          </div>
+          <div class="hero-meta reveal">
+            <div class="socials">
+              <a href="https://www.linkedin.com/in/renz-bautista-sayaman/" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+                  class="bi bi-linkedin"></i></a>
+              <a href="https://github.com/Elcavz" target="_blank" rel="noopener" aria-label="GitHub"><i
+                  class="bi bi-github"></i></a>
+              <a href="mailto:renzsayaman100@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+            </div>
+            <span class="divider"></span>
+            <span class="muted small"><i class="bi bi-geo-alt-fill accent"></i> Dasmariñas, Cavite, PH</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="code-card tilt">
+            <div class="code-head">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+              <span class="code-file">renz.js</span>
+            </div>
+<pre class="code-body"><code><span class="k">const</span> <span class="v">developer</span> = {
+  <span class="p">name</span>: <span class="s">'Renz Bautista Sayaman'</span>,
+  <span class="p">role</span>: <span class="s">'Full Stack Web Developer'</span>,
+  <span class="p">location</span>: <span class="s">'Cavite, Philippines'</span>,
+  <span class="p">stack</span>: [<span class="s">'React'</span>, <span class="s">'Node.js'</span>, <span class="s">'Express'</span>, <span class="s">'MySQL'</span>],
+  <span class="p">focus</span>: <span class="s">'Websites that grow businesses'</span>,
+  <span class="p">available</span>: <span class="b">true</span>,
+};
+
+<span class="v">developer</span>.<span class="f">build</span>(<span class="s">'your next idea'</span>); <span class="c">// 🚀</span></code></pre>
+          </div>
+          <div class="float-chip chip-1"><i class="bi bi-lightning-charge-fill"></i> Fast &amp; responsive</div>
+          <div class="float-chip chip-2"><i class="bi bi-check2-circle"></i> Clean, maintainable code</div>
         </div>
       </div>
-    </main>
-  </div>
 
-  <div id="about" class="paddsection">
-    <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-lg-4">
-          <div class="div-img-bg">
-            <div class="about-img">
-              <img src="images/pic/me.PNG" class="img-fluid" alt="me">
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <div class="about-descr">
-            <p class="h1">I'm a coding and tech enthusiast, constantly exploring new challenges and innovations.</p>
-            <p class="separator my-3">I'm deeply passionate about coding and technology, and I thrive on the endless
-              possibilities they offer. From the moment I wrote my first line of code, I knew I had found my true
-              calling. Whether it's crafting elegant algorithms, designing intuitive user interfaces, or exploring the
-              latest innovations, I'm always excited to embark on a new coding adventure. My journey in the world of
-              technology has been a constant quest for knowledge and innovation. With a keen eye for detail and a
-              determination to push boundaries, I relish the challenge of turning complex problems into elegant
-              solutions. Through my work, I aim to not only make a mark in the ever-evolving tech landscape but also to
-              inspire and empower others to embrace the transformative power of technology. Join me on this exciting
-              journey as we explore the limitless possibilities of the digital world together!"</p>
-          </div>
-        </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+        <span class="mouse"><span class="wheel"></span></span>
+      </a>
+    </section>
+
+    <!-- Tech marquee -->
+    <div class="marquee" aria-label="Technologies I work with">
+      <div class="marquee-track">
+        <span><i class="bi bi-filetype-html"></i> HTML5</span>
+        <span><i class="bi bi-filetype-css"></i> CSS3</span>
+        <span><i class="bi bi-filetype-js"></i> JavaScript</span>
+        <span><i class="bi bi-filetype-jsx"></i> React</span>
+        <span><i class="bi bi-hexagon-fill"></i> Node.js</span>
+        <span><i class="bi bi-hdd-network"></i> Express</span>
+        <span><i class="bi bi-database-fill"></i> MySQL</span>
+        <span><i class="bi bi-bootstrap-fill"></i> Bootstrap</span>
+        <span><i class="bi bi-bar-chart-fill"></i> Chart.js</span>
+        <span><i class="bi bi-git"></i> Git</span>
+        <span><i class="bi bi-github"></i> GitHub</span>
+        <span><i class="bi bi-phone"></i> Responsive Design</span>
       </div>
     </div>
-  </div>
 
-  <div id="pf" class="vh-100 bg-white">
-    <div class="w-100 h-100">
-      <div class="row w-100 h-100 justify-content-between align-items-center">
-        <div class="w-75">
-          <div class="pf-h1 text-center mb-5">
-            <h1 class="section-title">My Portfolio</h1>
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">01 — About me</span>
+          <h2 class="section-title">A coding &amp; tech enthusiast who loves <span class="gradient-text">turning
+              problems into products.</span></h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-photo reveal">
+            <div class="photo-frame">
+              <img src="images/pic/me.PNG" alt="Portrait of Renz Sayaman" loading="lazy">
+            </div>
+            <div class="photo-tag">
+              <span class="pulse"></span>
+              <div>
+                <strong>Renz Bautista Sayaman</strong>
+                <span>Full Stack Web Developer</span>
+              </div>
+            </div>
           </div>
-          <div class="col-md-12">
-            <div id="myCarousel" class="carousel slide shadow-lg" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="item active">
-                  <img src="images/project/PortfolioV1.PNG" alt="">
-                  <div class="carousel-caption">
-                    <h3>Great Design</h3>
+
+          <div class="about-body">
+            <p class="lead reveal">
+              From the moment I wrote my first line of code, I knew I had found my calling. I enjoy crafting clean
+              logic, designing intuitive interfaces, and exploring the latest web technologies.
+            </p>
+            <p class="reveal muted">
+              With a keen eye for detail and a drive to push boundaries, I turn complex problems into simple,
+              elegant solutions. My goal is to build websites that make a real difference for the people and
+              businesses who use them — and to keep learning with every project.
+            </p>
+
+            <div class="stats reveal">
+              <div class="stat">
+                <span class="stat-num"><span class="count" data-to="14">0</span>+</span>
+                <span class="stat-label">Projects built</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num"><span class="count" data-to="40">0</span>+</span>
+                <span class="stat-label">GitHub repositories</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num"><span class="count" data-to="3">0</span>+</span>
+                <span class="stat-label">Years of coding</span>
+              </div>
+            </div>
+
+            <ul class="facts reveal">
+              <li><i class="bi bi-geo-alt"></i><span>Based in</span><strong>Dasmariñas, Cavite</strong></li>
+              <li><i class="bi bi-translate"></i><span>Languages</span><strong>English, Filipino</strong></li>
+              <li><i class="bi bi-briefcase"></i><span>Open to</span><strong>Freelance &amp; full-time</strong></li>
+              <li><i class="bi bi-clock"></i><span>Local time</span><strong id="local-time">—</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">02 — What I do</span>
+          <h2 class="section-title">Services that take your idea <span class="gradient-text">from sketch to
+              launch.</span></h2>
+        </div>
+
+        <div class="cards-4">
+          <article class="card spotlight reveal">
+            <div class="card-icon"><i class="bi bi-window-stack"></i></div>
+            <h3>Website Development</h3>
+            <p>Custom, fast-loading websites built from scratch with clean, semantic, maintainable code.</p>
+          </article>
+          <article class="card spotlight reveal">
+            <div class="card-icon"><i class="bi bi-phone-flip"></i></div>
+            <h3>Responsive UI</h3>
+            <p>Pixel-perfect layouts that look and work great on phones, tablets, and large screens.</p>
+          </article>
+          <article class="card spotlight reveal">
+            <div class="card-icon"><i class="bi bi-hdd-stack"></i></div>
+            <h3>Back-end &amp; Databases</h3>
+            <p>Forms, logins, dashboards, and data storage that streamline how your business runs.</p>
+          </article>
+          <article class="card spotlight reveal">
+            <div class="card-icon"><i class="bi bi-speedometer2"></i></div>
+            <h3>Optimization &amp; Support</h3>
+            <p>Performance tuning, SEO basics, bug fixes, and updates to keep your site in top shape.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">03 — Tech stack</span>
+          <h2 class="section-title">Tools I use to <span class="gradient-text">bring ideas to life.</span></h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group card reveal">
+            <div class="skill-head"><i class="bi bi-palette2"></i>
+              <h3>Front-end</h3>
+            </div>
+            <ul class="chips">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript (ES6+)</li>
+              <li>React</li>
+              <li>React Router</li>
+              <li>Bootstrap 5</li>
+              <li>Chart.js</li>
+              <li>Flexbox &amp; Grid</li>
+              <li>Responsive Design</li>
+            </ul>
+          </div>
+          <div class="skill-group card reveal">
+            <div class="skill-head"><i class="bi bi-server"></i>
+              <h3>Back-end</h3>
+            </div>
+            <ul class="chips">
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>MySQL</li>
+              <li>REST APIs</li>
+              <li>JWT Auth</li>
+              <li>bcrypt</li>
+            </ul>
+          </div>
+          <div class="skill-group card reveal">
+            <div class="skill-head"><i class="bi bi-tools"></i>
+              <h3>Tools &amp; Workflow</h3>
+            </div>
+            <ul class="chips">
+              <li>Git &amp; GitHub</li>
+              <li>npm</li>
+              <li>Vercel</li>
+              <li>GitHub Pages</li>
+              <li>VS Code</li>
+              <li>Third-party APIs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head section-head-row reveal">
+          <div>
+            <span class="eyebrow">04 — Selected work</span>
+            <h2 class="section-title">Featured <span class="gradient-text">projects.</span></h2>
+          </div>
+          <p class="muted head-note">Things I've designed and built, from full stack apps to handy tools. Click a
+            screenshot to enlarge it.</p>
+        </div>
+
+        <div class="filters reveal" role="tablist" aria-label="Filter projects">
+          <button class="filter active" data-filter="all" role="tab" aria-selected="true">All <span
+              class="filter-count"></span></button>
+          <button class="filter" data-filter="fullstack" role="tab" aria-selected="false">Full Stack <span
+              class="filter-count"></span></button>
+          <button class="filter" data-filter="frontend" role="tab" aria-selected="false">Front-end <span
+              class="filter-count"></span></button>
+          <button class="filter" data-filter="tools" role="tab" aria-selected="false">Apps &amp; Tools <span
+              class="filter-count"></span></button>
+        </div>
+
+        <div class="project-grid">
+
+          <!-- Student Management System -->
+          <article class="pcard pcard-wide reveal" data-cat="fullstack">
+            <div class="pcard-media art art-dashboard" aria-hidden="true">
+              <div class="mock-dash">
+                <div class="md-side"><span></span><span></span><span></span><span></span></div>
+                <div class="md-main">
+                  <div class="md-tiles">
+                    <div><b>Students</b><i></i></div>
+                    <div><b>Boys</b><i></i></div>
+                    <div><b>Girls</b><i></i></div>
                   </div>
-                </div>
-                <div class="item">
-                  <img src="images/project/Project1.PNG" alt="">
-                  <div class="carousel-caption">
-                    <h3>Mobile Friendly</h3>
-                  </div>
-                </div>
-                <div class="item">
-                  <img src="images/project/RBS - MP1.png" alt="">
-                  <div class="carousel-caption">
-                    <h3>Functional Website</h3>
+                  <div class="md-chart">
+                    <span style="--h:45%"></span><span style="--h:70%"></span><span style="--h:55%"></span>
+                    <span style="--h:90%"></span><span style="--h:65%"></span><span style="--h:80%"></span>
+                    <span style="--h:50%"></span>
                   </div>
                 </div>
               </div>
-              <ul class="nav nav-pills nav-justified">
-                <li data-target="#myCarousel" data-slide-to="0" class="nav-item active"><a
-                    href="#"><strong>Portfolio</strong>My First Portfolio</a></li>
-                <li data-target="#myCarousel" data-slide-to="1" class="nav-item"><a href="#"><strong>Creative
-                      Ally</strong>First Web Project Using Grid & Flex</a></li>
-                <li data-target="#myCarousel" data-slide-to="2" class="nav-item"><a href="#"><strong>RBS | Circadian
-                      Health</strong>Mini-Project 1</a></li>
+              <span class="art-badge"><i class="bi bi-shield-lock-fill"></i> JWT Auth</span>
+            </div>
+            <div class="pcard-body">
+              <span class="pcard-type"><i class="bi bi-layers-fill"></i> Full Stack · Major Project 2</span>
+              <h3>Student Management System</h3>
+              <p>A full stack school dashboard. The React front-end handles secure login and charts student data
+                with Chart.js. A Node.js + Express REST API backed by MySQL manages registration, password changes,
+                student records, and gender and grade statistics for admins.</p>
+              <ul class="tags">
+                <li>React</li>
+                <li>Chart.js</li>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>MySQL</li>
+                <li>JWT</li>
+                <li>bcrypt</li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <section id="contact" class="ftco-section vh-100">
-    <div class="container h-100 d-flex flex-column justify-content-center">
-      <div class="row justify-content-center">
-        <div class="col-md-6 text-center mb-5">
-          <h2 class="heading-section">GET IN TOUCH</h2>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="wrapper">
-            <div class="row no-gutters">
-              <div class="col-md-6 d-flex align-items-stretch">
-                <div class="contact-wrap w-100 p-md-5 p-4 py-5">
-                  <h3 class="mb-4">Write us</h3>
-                  <div id="form-message-warning" class="mb-4"></div>
-                  <div id="form-message-success" class="mb-4">
-                    Your message was sent, thank you!
-                  </div>
-                  <form method="POST" id="contactForm" name="contactForm" class="contactForm">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <input type="text" class="form-control" name="name" id="name" placeholder="Name">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <textarea name="message" class="form-control" id="message" cols="30" rows="6"
-                            placeholder="Message"></textarea>
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <input type="submit" value="Send Message" class="btn btn-primary">
-                          <div class="submitting"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="col-md-6 d-flex align-items-stretch">
-                <div class="info-wrap w-100 p-md-5 p-4 py-5 img">
-                  <h3>Contact information</h3>
-                  <p class="mb-4">We're open for any suggestion or just to have a chat</p>
-                  <div class="dbox w-100 d-flex align-items-start">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                      <span class="fa fa-map-marker"></span>
-                    </div>
-                    <div class="text pl-3 dbox-p">
-                      <p><span>Address:</span> Dasmariñas, Cavite</p>
-                    </div>
-                  </div>
-                  <div class="dbox w-100 d-flex align-items-center">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                      <span class="fa fa-phone"></span>
-                    </div>
-                    <div class="text pl-3">
-                      <p><span>Phone:</span> <a href="tel://09457392548">+63945-739-2548</a></p>
-                    </div>
-                  </div>
-                  <div class="dbox w-100 d-flex align-items-center">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                      <span class="fa fa-paper-plane"></span>
-                    </div>
-                    <div class="text pl-3">
-                      <p><span>Email:</span> <a href="mailto:renzsayaman100@gmail.com">renzsayaman100@gmail.com</a></p>
-                    </div>
-                  </div>
-                  <div class="dbox w-100 d-flex align-items-center">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                      <span class="fa fa-globe"></span>
-                    </div>
-                    <div class="text pl-3">
-                      <p><span>Website</span> <a href="#">Linkedin.com/in/Renz-Sayaman</a></p>
-                    </div>
-                  </div>
-                </div>
+              <div class="pcard-links">
+                <a href="https://github.com/Elcavz/Major-Project-2-FrontEnd" target="_blank" rel="noopener"><i
+                    class="bi bi-github"></i> Front-end</a>
+                <a href="https://github.com/Elcavz/Major-Project-2-BackEnd" target="_blank" rel="noopener"><i
+                    class="bi bi-github"></i> Back-end</a>
               </div>
             </div>
+          </article>
+
+          <!-- C&F Phils Corp -->
+          <article class="pcard reveal" data-cat="frontend">
+            <button class="pcard-media tilt" data-lightbox="images/project/cf-philippines.jpg"
+              data-title="C&amp;F Phils. Corp" aria-label="Enlarge C&amp;F Phils. Corp screenshot">
+              <div class="browser-bar"><span></span><span></span><span></span>
+                <div class="url">cfphilippines.com</div>
+              </div>
+              <img src="images/project/cf-philippines.jpg" alt="C&amp;F Phils. Corp homepage with factory floor hero"
+                loading="lazy">
+              <span class="zoom"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <div class="pcard-body">
+              <span class="pcard-type"><i class="bi bi-building"></i> Client Website · React</span>
+              <h3>C&amp;F Phils. Corp</h3>
+              <p>The live corporate website for C&amp;F, a precision sheet-metal manufacturer with operations in
+                Ireland, the Czech Republic, and the Philippines. It's a React single-page app with client-side routing,
+                Chart.js figures, and pages for services, sectors, careers, and sustainability (ESG).</p>
+              <ul class="tags">
+                <li>React 18</li>
+                <li>React Router</li>
+                <li>Chart.js</li>
+                <li>Bootstrap 5</li>
+                <li>SweetAlert2</li>
+              </ul>
+              <div class="pcard-links">
+                <a href="https://cfphilippines.com" target="_blank" rel="noopener" class="live"><i
+                    class="bi bi-box-arrow-up-right"></i> Live</a>
+                <a href="https://github.com/Elcavz/CF-PH-WEB" target="_blank" rel="noopener"><i
+                    class="bi bi-github"></i> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Xcel Hub -->
+          <article class="pcard reveal" data-cat="frontend">
+            <button class="pcard-media tilt" data-lightbox="images/project/xcelhub.jpg"
+              data-title="Xcel Hub Training Services" aria-label="Enlarge Xcel Hub Training Services screenshot">
+              <div class="browser-bar"><span></span><span></span><span></span>
+                <div class="url">xcelhubtrainingservices.com</div>
+              </div>
+              <img src="images/project/xcelhub.jpg" alt="Xcel Hub Training Services homepage hero" loading="lazy">
+              <span class="zoom"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <div class="pcard-body">
+              <span class="pcard-type"><i class="bi bi-mortarboard"></i> Client Website · Training Center</span>
+              <h3>Xcel Hub Training Services</h3>
+              <p>The website for a Quezon City tutorial center and Authorized Certiport Testing Center that teaches
+                Excel, Google Sheets, and data analysis. It has pages for About Us, Training Schedule, Gallery, and
+                Contact, plus online registration so learners can sign up for classes.</p>
+              <ul class="tags">
+                <li>GoHighLevel</li>
+                <li>Web Design</li>
+                <li>Lead Forms</li>
+                <li>Responsive</li>
+              </ul>
+              <div class="pcard-links">
+                <a href="https://xcelhubtrainingservices.com/" target="_blank" rel="noopener" class="live"><i
+                    class="bi bi-box-arrow-up-right"></i> Live</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ElcavzFlixter -->
+          <article class="pcard reveal" data-cat="tools">
+            <button class="pcard-media tilt" data-lightbox="images/project/elcavzflixter-site.jpg"
+              data-title="Elcavz Flixter" aria-label="Enlarge Elcavz Flixter screenshot">
+              <div class="browser-bar"><span></span><span></span><span></span>
+                <div class="url">elcavzflixter.site</div>
+              </div>
+              <img src="images/project/elcavzflixter-site.jpg" alt="Elcavz Flixter homepage with featured title carousel"
+                loading="lazy">
+              <span class="zoom"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <div class="pcard-body">
+              <span class="pcard-type"><i class="bi bi-film"></i> Web App · Next.js</span>
+              <h3>Elcavz Flixter</h3>
+              <p>A cinematic movie and TV discovery app with a featured carousel, Live TV, favourites and bookmarks
+                with import, collections, and search. A "What's your vibe?" mood picker and a "Roll the dice"
+                random pick help viewers decide what to watch.</p>
+              <ul class="tags">
+                <li>Next.js</li>
+                <li>React</li>
+                <li>Movie API</li>
+                <li>Responsive</li>
+              </ul>
+              <div class="pcard-links">
+                <a href="https://www.elcavzflixter.site" target="_blank" rel="noopener" class="live"><i
+                    class="bi bi-box-arrow-up-right"></i> Live</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Toolshots VLOOKUP -->
+          <article class="pcard reveal" data-cat="tools">
+            <button class="pcard-media tilt" data-lightbox="images/project/toolshots-vlookup.jpg"
+              data-title="Toolshots VLOOKUP" aria-label="Enlarge Toolshots VLOOKUP screenshot">
+              <div class="browser-bar"><span></span><span></span><span></span>
+                <div class="url">toolshots-vlookup</div>
+              </div>
+              <img src="images/project/toolshots-vlookup.jpg" alt="Toolshots VLOOKUP file upload interface"
+                loading="lazy">
+              <span class="zoom"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <div class="pcard-body">
+              <span class="pcard-type"><i class="bi bi-table"></i> Productivity Tool</span>
+              <h3>Toolshots VLOOKUP</h3>
+              <p>Excel's VLOOKUP without Excel. Upload two spreadsheets and the tool cleans the lookup values and
+                matches them against the data source, all inside the browser, so files never leave your computer.</p>
+              <ul class="tags">
+                <li>JavaScript</li>
+                <li>SheetJS</li>
+                <li>FileReader API</li>
+                <li>Bootstrap 5</li>
+              </ul>
+              <div class="pcard-links">
+                <a href="https://github.com/Elcavz/Toolshots-Vlookup" target="_blank" rel="noopener"><i
+                    class="bi bi-github"></i> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- C&F Ordering -->
+          <article class="pcard reveal" data-cat="frontend">
+            <button class="pcard-media tilt" data-lightbox="images/project/cf-ordering.jpg"
+              data-title="C&amp;F Food Ordering" aria-label="Enlarge C&amp;F Food Ordering screenshot">
+              <div class="browser-bar"><span></span><span></span><span></span>
+                <div class="url">cf-ordering-web</div>
+              </div>
+              <img src="images/project/cf-ordering.jpg" alt="C&amp;F food ordering homepage with burger hero"
+                loading="lazy">
+              <span class="zoom"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <div class="pcard-body">
+              <span class="pcard-type"><i class="bi bi-bag-heart"></i> E-commerce UI</span>
+              <h3>C&amp;F Food Ordering</h3>
+              <p>A food-ordering web app interface with product search, a table-booking form, product cards with
+                prices and discounts, plus order history and account pages.</p>
+              <ul class="tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <div class="pcard-links">
+                <a href="https://github.com/Elcavz/Ordering-Web" target="_blank" rel="noopener"><i
+                    class="bi bi-github"></i> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- RBS -->
+          <article class="pcard reveal" data-cat="frontend">
+            <button class="pcard-media tilt" data-lightbox="images/project/RBS - MP1.png"
+              data-title="RBS | Circadian Health" aria-label="Enlarge RBS Circadian Health screenshot">
+              <div class="browser-bar"><span></span><span></span><span></span>
+                <div class="url">elcavz.github.io/Mini-Project-1</div>
+              </div>
+              <img src="images/project/RBS - MP1.png" alt="RBS Circadian Health landing page" loading="lazy">
+              <span class="zoom"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <div class="pcard-body">
+              <span class="pcard-type"><i class="bi bi-heart-pulse"></i> Product Landing Page · Mini-Project 1</span>
+              <h3>RBS | Circadian Health</h3>
+              <p>A multi-page product site for a circadian-health wearable, with Why RBS, FAQs, and Buy pages. It
+                pairs bold hero messaging and soft bokeh visuals with a dedicated responsive stylesheet.</p>
+              <ul class="tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Responsive</li>
+              </ul>
+              <div class="pcard-links">
+                <a href="https://elcavz.github.io/Mini-Project-1/" target="_blank" rel="noopener" class="live"><i
+                    class="bi bi-box-arrow-up-right"></i> Live</a>
+                <a href="https://github.com/Elcavz/Mini-Project-1" target="_blank" rel="noopener"><i
+                    class="bi bi-github"></i> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Creative Ally -->
+          <article class="pcard reveal" data-cat="frontend">
+            <button class="pcard-media tilt" data-lightbox="images/project/Project1.PNG" data-title="Creative Ally"
+              aria-label="Enlarge Creative Ally screenshot">
+              <div class="browser-bar"><span></span><span></span><span></span>
+                <div class="url">creative-ally</div>
+              </div>
+              <img src="images/project/Project1.PNG" alt="Creative Ally website hero section" loading="lazy">
+              <span class="zoom"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <div class="pcard-body">
+              <span class="pcard-type"><i class="bi bi-car-front"></i> Business Website · First web project</span>
+              <h3>Creative Ally</h3>
+              <p>A dark, cinematic website for an automotive brand, and my first project built entirely with CSS Grid
+                and Flexbox. It features strong typography and full-bleed imagery.</p>
+              <ul class="tags">
+                <li>HTML</li>
+                <li>CSS Grid</li>
+                <li>Flexbox</li>
+                <li>JavaScript</li>
+              </ul>
+              <div class="pcard-links">
+                <a href="https://github.com/Elcavz/Creative-Ally-Project" target="_blank" rel="noopener"><i
+                    class="bi bi-github"></i> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Portfolio V1 -->
+          <article class="pcard reveal" data-cat="frontend">
+            <button class="pcard-media tilt" data-lightbox="images/project/PortfolioV1.PNG" data-title="Portfolio V1"
+              aria-label="Enlarge Portfolio V1 screenshot">
+              <div class="browser-bar"><span></span><span></span><span></span>
+                <div class="url">elcavz.github.io/My-Portfolio</div>
+              </div>
+              <img src="images/project/PortfolioV1.PNG" alt="First version of Renz's portfolio" loading="lazy">
+              <span class="zoom"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <div class="pcard-body">
+              <span class="pcard-type"><i class="bi bi-person-badge"></i> Personal Brand</span>
+              <h3>Portfolio V1</h3>
+              <p>The first version of my personal portfolio: a moody dark theme, a typewriter-style intro, and a
+                split-image hero that gave the page its personality.</p>
+              <ul class="tags">
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+              <div class="pcard-links">
+                <a href="https://elcavz.github.io/My-Portfolio/" target="_blank" rel="noopener" class="live"><i
+                    class="bi bi-box-arrow-up-right"></i> Live</a>
+                <a href="https://github.com/Elcavz/My-Portfolio" target="_blank" rel="noopener"><i
+                    class="bi bi-github"></i> Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Smaller projects -->
+        <div class="more reveal">
+          <div class="more-head">
+            <h3>More on GitHub</h3>
+            <a href="https://github.com/Elcavz?tab=repositories" target="_blank" rel="noopener" class="more-all">See
+              all repositories <i class="bi bi-arrow-up-right"></i></a>
           </div>
+          <ul class="more-list">
+            <li data-cat="fullstack">
+              <a href="https://github.com/Elcavz/Nodejs-V3" target="_blank" rel="noopener">
+                <i class="bi bi-person-lock"></i>
+                <div><strong>Node.js Auth System</strong><span>Register and login with Express, MySQL, and bcrypt
+                    password hashing</span></div>
+                <em>Node.js</em><i class="bi bi-arrow-up-right go"></i>
+              </a>
+            </li>
+            <li data-cat="frontend">
+              <a href="https://github.com/Elcavz/React-JS" target="_blank" rel="noopener">
+                <i class="bi bi-filetype-jsx"></i>
+                <div><strong>React Registration &amp; Login</strong><span>Auth screens and form flows built with
+                    React components</span></div>
+                <em>React</em><i class="bi bi-arrow-up-right go"></i>
+              </a>
+            </li>
+            <li data-cat="fullstack">
+              <a href="https://github.com/Elcavz/Nodejs-V2" target="_blank" rel="noopener">
+                <i class="bi bi-cloud-sun"></i>
+                <div><strong>Dasmariñas Weather</strong><span>Node.js HTTP server rendering today's max and min
+                    temperatures</span></div>
+                <em>Node.js</em><i class="bi bi-arrow-up-right go"></i>
+              </a>
+            </li>
+            <li data-cat="tools">
+              <a href="https://github.com/Elcavz/Calcu" target="_blank" rel="noopener">
+                <i class="bi bi-calculator"></i>
+                <div><strong>Calcu</strong><span>Calculator with memory keys (M+, M−, MRC) in HTML, CSS, JS, and
+                    Bootstrap 5</span></div>
+                <em>JavaScript</em><i class="bi bi-arrow-up-right go"></i>
+              </a>
+            </li>
+            <li data-cat="frontend">
+              <a href="https://github.com/Elcavz/RegistrationForm-with-js" target="_blank" rel="noopener">
+                <i class="bi bi-ui-checks"></i>
+                <div><strong>Registration Form</strong><span>Multi-page form with client-side JavaScript
+                    validation</span></div>
+                <em>JavaScript</em><i class="bi bi-arrow-up-right go"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div id="footer" class="text-center">
+    <!-- Process -->
+    <section id="process" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">05 — How I work</span>
+          <h2 class="section-title">A simple process, <span class="gradient-text">no surprises.</span></h2>
+        </div>
+
+        <ol class="process">
+          <li class="reveal">
+            <span class="step">01</span>
+            <h3>Discover</h3>
+            <p>We talk about your goals, audience, and what success looks like for your website.</p>
+          </li>
+          <li class="reveal">
+            <span class="step">02</span>
+            <h3>Design</h3>
+            <p>I plan the structure and design a layout that fits your brand and your users.</p>
+          </li>
+          <li class="reveal">
+            <span class="step">03</span>
+            <h3>Develop</h3>
+            <p>I build it with clean code, test on every screen size, and keep you updated along the way.</p>
+          </li>
+          <li class="reveal">
+            <span class="step">04</span>
+            <h3>Deliver</h3>
+            <p>Launch day! Plus support afterwards so your site keeps running smoothly.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-intro">
+            <span class="eyebrow">06 — Contact</span>
+            <h2 class="contact-title">Let's build something <span class="gradient-text">great together.</span></h2>
+            <p class="muted">Have a project in mind, a question, or just want to say hi? I'm open to any suggestion or
+              just a chat. I'll get back to you as soon as I can.</p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <span class="ci-icon"><i class="bi bi-envelope"></i></span>
+                <div>
+                  <span class="ci-label">Email</span>
+                  <a href="mailto:renzsayaman100@gmail.com">renzsayaman100@gmail.com</a>
+                </div>
+                <button class="copy-btn" data-copy="renzsayaman100@gmail.com" aria-label="Copy email address">
+                  <i class="bi bi-copy"></i><span>Copy</span>
+                </button>
+              </div>
+              <div class="contact-item">
+                <span class="ci-icon"><i class="bi bi-telephone"></i></span>
+                <div>
+                  <span class="ci-label">Phone</span>
+                  <a href="tel:+639457392548">+63 945 739 2548</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="ci-icon"><i class="bi bi-linkedin"></i></span>
+                <div>
+                  <span class="ci-label">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/renz-bautista-sayaman/" target="_blank"
+                    rel="noopener">linkedin.com/in/renz-bautista-sayaman</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="ci-icon"><i class="bi bi-geo-alt"></i></span>
+                <div>
+                  <span class="ci-label">Location</span>
+                  <span>Dasmariñas, Cavite, Philippines</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="field">
+              <input type="text" id="name" name="name" placeholder=" " required autocomplete="name">
+              <label for="name">Your name</label>
+            </div>
+            <div class="field">
+              <input type="email" id="email" name="email" placeholder=" " required autocomplete="email">
+              <label for="email">Email address</label>
+            </div>
+            <div class="field">
+              <input type="text" id="subject" name="subject" placeholder=" ">
+              <label for="subject">Subject</label>
+            </div>
+            <div class="field">
+              <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+              <label for="message">Tell me about your project</label>
+            </div>
+            <p class="form-status" id="form-status" role="status"></p>
+            <button type="submit" class="btn btn-primary btn-block magnetic">Send message <i
+                class="bi bi-send-fill"></i></button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
     <div class="container">
-      <div class="socials-media text-center">
-
-        <ul class="list-unstyled">
-          <li><a target="_blank" href="https://www.google.com"><i class="bi bi-facebook"></i></a></li>
-          <li><a target="_blank" href="https://www.google.com"><i class="bi bi-twitter"></i></a></li>
-          <li><a target="_blank" href="https://www.google.com"><i class="bi bi-instagram"></i></a></li>
-          <li><a target="_blank" href="https://www.google.com"><i class="bi bi-linkedin"></i></a></li>
-        </ul>
-
+      <div class="footer-big">Renz<span class="accent">.</span>Sayaman</div>
+      <div class="footer-row">
+        <p class="muted small">&copy; <span id="year"></span> Renz Bautista Sayaman. Designed &amp; built with care.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/renz-bautista-sayaman/" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+              class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/Elcavz" target="_blank" rel="noopener" aria-label="GitHub"><i
+              class="bi bi-github"></i></a>
+          <a href="mailto:renzsayaman100@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+        </div>
+        <a href="#home" class="to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
       </div>
-
-      <p>&copy; Copyrights 2023. All rights reserved.</p>
-
     </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project preview" hidden>
+    <button class="lightbox-close" aria-label="Close preview"><i class="bi bi-x-lg"></i></button>
+    <figure>
+      <img src="" alt="">
+      <figcaption></figcaption>
+    </figure>
   </div>
 
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
