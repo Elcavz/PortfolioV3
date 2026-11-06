@@ -8,6 +8,32 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
+  /* ---------- Analytics (GoatCounter events) ---------- */
+  // Events show up in the GoatCounter dashboard alongside page views.
+  // Silently does nothing if the script is blocked or hasn't loaded yet.
+  const trackEvent = (path, title) => {
+    const gc = window.goatcounter;
+    if (gc && typeof gc.count === 'function') {
+      try { gc.count({ path, title: title || path, event: true }); } catch (_) { /* ignore */ }
+    }
+  };
+  const linkLabel = a => {
+    const project = a.closest('.pcard');
+    const name = project && $('h3', project) ? $('h3', project).textContent.trim() : '';
+    const text = a.textContent.trim() || a.getAttribute('aria-label') || '';
+    return name ? `${name} — ${text}` : text;
+  };
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (href.startsWith('mailto:')) {
+      trackEvent('email-click', 'Clicked email link');
+    } else if (/^https?:/i.test(href) && a.hostname !== location.hostname) {
+      trackEvent(`outbound/${a.hostname}${a.pathname.replace(/\/$/, '')}`, linkLabel(a));
+    }
+  });
+
   /* ---------- Typewriter (rotating roles) ---------- */
   const typed = $('#typed');
   const roles = [
@@ -224,6 +250,7 @@
         ta.remove();
       }
       showToast('Email copied to clipboard ✓');
+      trackEvent('email-copy', 'Copied email address');
     });
   });
 
@@ -251,7 +278,10 @@
   };
 
   $$('[data-lightbox]').forEach(el => {
-    el.addEventListener('click', () => openLightbox(el.dataset.lightbox, el.dataset.title));
+    el.addEventListener('click', () => {
+      openLightbox(el.dataset.lightbox, el.dataset.title);
+      trackEvent(`project-preview/${el.dataset.lightbox.split('/').pop().replace(/\.\w+$/, '')}`, `Viewed screenshot: ${el.dataset.title}`);
+    });
   });
   lb.addEventListener('click', e => { if (e.target === lb || e.target.closest('.lightbox-close')) closeLightbox(); });
   document.addEventListener('keydown', e => {
@@ -281,6 +311,7 @@
     const email = $('#email').value.trim();
     const subject = $('#subject').value.trim() || `Project inquiry from ${name}`;
     const body = `${$('#message').value.trim()}\n\n— ${name} (${email})`;
+    trackEvent('contact-form-submit', 'Submitted contact form');
     window.location.href =
       `mailto:renzsayaman100@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     status.className = 'form-status ok';
