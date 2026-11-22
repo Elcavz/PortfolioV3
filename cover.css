@@ -2249,3 +2249,8 @@ button.pcard-media:hover {
     transform: none;
   }
 }
+
+/* Wide card with a screenshot instead of illustrated art */
+.pcard-wide > .pcard-media.tilt {
+  align-self: center;
+}
