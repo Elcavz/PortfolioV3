@@ -313,7 +313,7 @@
     const body = `${$('#message').value.trim()}\n\n— ${name} (${email})`;
     trackEvent('contact-form-submit', 'Submitted contact form');
     window.location.href =
-      `mailto:renzsayaman100@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      `mailto:renzsayaman.dev@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     status.className = 'form-status ok';
     status.textContent = 'Opening your email app… thanks for reaching out!';
     form.reset();
